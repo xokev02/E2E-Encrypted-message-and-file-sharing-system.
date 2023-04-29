@@ -5,16 +5,16 @@ import db_helper
 
 named_tuple = time.localtime()
 time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)
-user = main.user
-pwd = main.pwd
+User = main.user
+Pwd = main.pwd
 
 
-def actions(user, pwd):
-    result = db_helper.is_valid_user(user, pwd)
+def actions(User, Pwd):
+    result = db_helper.is_valid_user(User, Pwd)
     if result != 0:
         print(
             "######################################################################################################################")
-        print("Hola " + user + "!!!\t\t" + time_string)
+        print("Hola " + User + "!!!\t\t" + time_string)
         print("Enter 1 for encrypting file for the user \t\t\t\t\t\t"
               "Enter 2 for decrypting file you received\n"
               "Enter 3 for sending encrypted message to another user\t\t\t"
@@ -35,26 +35,26 @@ def actions(user, pwd):
 
         elif x == 2:
             filename = str(input("Enter the file to be decrypted:"))
-            MyCryptography.decrypt_file(filename, user)
+            MyCryptography.decrypt_file(filename, User)
             print(filename + " has been decrypted successfully!!")
 
         elif x == 3:
             receiver = str(input("Enter the receiver:"))
             message = str(input("Enter the message:"))
-            MyCryptography.encrypt_message(message, receiver, user)
+            MyCryptography.encrypt_message(message, receiver, User)
             print("Message has been successfully sent!")
 
         elif x == 4:
-            MyCryptography.decrypt_all_messages(user)
+            MyCryptography.decrypt_all_messages(User)
 
         elif x == 5:
             Result = 0
             while Result == 0:
                 user = input("Enter user name:")
                 pwd = input("Enter password:")
-                Result = db_helper.is_valid_user(user, pwd)
+                Result = db_helper.is_valid_user(User, Pwd)
                 if Result == 1:
-                    actions(user, pwd)
+                    actions(User, Pwd)
                 else:
                     print("Invalid user or password!!")
                     exit()
@@ -74,7 +74,7 @@ def actions(user, pwd):
             #     print("<...Enter a valid OTP...>")
 
         elif x == 7:
-            print("See Ya Mi Amigo " + user + "!!!")
+            print("See Ya Mi Amigo " + User + "!!!")
 
     else:
         print("Invalid UserName or Password!!")

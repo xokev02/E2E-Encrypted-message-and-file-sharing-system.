@@ -5,7 +5,7 @@ import MyCryptography
 import db_helper
 
 named_tuple = time.localtime()
-time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)
+time_string = time.strftime("%d/%m/%Y, %H:%M:%S", named_tuple)
 
 # User Logging in...
 user = input("Enter your name:")
@@ -50,11 +50,11 @@ if result == 1:
 
     elif x == 5:
         result = 0
-        while result == 1:
+        while result == 0:
             user = input("Enter user name:")
             pwd = input("Enter password:")
             result = db_helper.is_valid_user(user, pwd)
-            if result == 0:
+            if result == 1:
                 print("Invalid user or password!!")
                 exit()
 

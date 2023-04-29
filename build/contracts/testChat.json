@@ -1,0 +1,3925 @@
+{
+  "contractName": "testChat",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "roomName",
+          "type": "string"
+        }
+      ],
+      "name": "NewMessage",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "addressToUsername",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "roomNameToMessages",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "construter",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_msg",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_roomName",
+          "type": "string"
+        }
+      ],
+      "name": "sendMessage",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "createUser",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getUsernameForAddress",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_roomName",
+          "type": "string"
+        }
+      ],
+      "name": "getMessageCountForRoom",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_roomName",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMessageByIndexForRoom",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"roomName\",\"type\":\"string\"}],\"name\":\"NewMessage\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"addressToUsername\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"construter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createUser\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_roomName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"getMessageByIndexForRoom\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_roomName\",\"type\":\"string\"}],\"name\":\"getMessageCountForRoom\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUsernameForAddress\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"roomNameToMessages\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_msg\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_roomName\",\"type\":\"string\"}],\"name\":\"sendMessage\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/chatApp.sol\":\"testChat\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/chatApp.sol\":{\"keccak256\":\"0x03d661ecb071460676a0f655108c5e0da929b4869979ecb2e2373e4a3cdf662d\",\"urls\":[\"bzz-raw://ae97ae45d952a63791fe60b5de4adab3b263a915e1562f7961c22a833d2908dc\",\"dweb:/ipfs/QmP6vdk4YMH68mYgGkoR1QvVo7KVJUYukyFEgcSPCuP2aR\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610b6a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063507ffba51161005b578063507ffba5146102f65780635f3d530814610364578063cb6c754a146103e4578063e07a0baa1461048a57610088565b80630b0511811461008d5780633271667d14610193578063383029891461019d578063467fba0f14610238575b600080fd5b6100fb600480360360408110156100a357600080fd5b810190602081018135600160201b8111156100bd57600080fd5b8201836020820111156100cf57600080fd5b803590602001918460018302840111600160201b831117156100f057600080fd5b9193509150356104b0565b6040518080602001846001600160a01b03166001600160a01b03168152602001838152602001828103825285818151815260200191508051906020019080838360005b8381101561015657818101518382015260200161013e565b50505050905090810190601f1680156101835780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019b6105d5565b005b6101c3600480360360208110156101b357600080fd5b50356001600160a01b03166105e9565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101fd5781810151838201526020016101e5565b50505050905090810190601f16801561022a5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61019b6004803603604081101561024e57600080fd5b810190602081018135600160201b81111561026857600080fd5b82018360208201111561027a57600080fd5b803590602001918460018302840111600160201b8311171561029b57600080fd5b919390929091602081019035600160201b8111156102b857600080fd5b8201836020820111156102ca57600080fd5b803590602001918460018302840111600160201b831117156102eb57600080fd5b509092509050610692565b61019b6004803603602081101561030c57600080fd5b810190602081018135600160201b81111561032657600080fd5b82018360208201111561033857600080fd5b803590602001918460018302840111600160201b8311171561035957600080fd5b509092509050610838565b6103d26004803603602081101561037a57600080fd5b810190602081018135600160201b81111561039457600080fd5b8201836020820111156103a657600080fd5b803590602001918460018302840111600160201b831117156103c757600080fd5b509092509050610857565b60408051918252519081900360200190f35b6100fb600480360360408110156103fa57600080fd5b810190602081018135600160201b81111561041457600080fd5b82018360208201111561042657600080fd5b803590602001918460018302840111600160201b8311171561044757600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295505091359250610888915050565b6101c3600480360360208110156104a057600080fd5b50356001600160a01b0316610969565b60606000806104bd610a02565b60018787604051808383808284378083019250505092505050908152602001604051809103902085815481106104ef57fe5b600091825260209182902060408051600393909302909101805460026001821615610100026000190190911604601f81018590049094028301608090810190925260608301848152929390928492909184918401828280156105925780601f1061056757610100808354040283529160200191610592565b820191906000526020600020905b81548152906001019060200180831161057557829003601f168201915b505050918352505060018201546001600160a01b031660208083019190915260029092015460409182015282519183015192015190999198509650945050505050565b600080546001600160a01b03191633179055565b6001600160a01b038116600090815260026020818152604092839020805484516001821615610100026000190190911693909304601f810183900483028401830190945283835260609390918301828280156106865780601f1061065b57610100808354040283529160200191610686565b820191906000526020600020905b81548152906001019060200180831161066957829003601f168201915b50505050509050919050565b61069a610a02565b604051806060016040528086868080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152505050908252503360208201524260409182015251909150600190849084908083838082843791909101948552505060405160209381900384019020805460018101808355600092835291859020865180519396889650600390930290910193506107489284929190910190610a2c565b5060208201518160010160006101000a8154816001600160a01b0302191690836001600160a01b03160217905550604082015181600201555050507f64e63d887f808b516e7eba5cf84ba14205c00730614a89dffa6befb5ef6461e88585334287876040518080602001866001600160a01b03166001600160a01b03168152602001858152602001806020018381038352898982818152602001925080828437600083820152601f01601f191690910184810383528581526020019050858580828437600083820152604051601f909101601f19169092018290039a509098505050505050505050a15050505050565b336000908152600260205260409020610852908383610aaa565b505050565b6000600183836040518083838082843791909101948552505060405192839003602001909220549250505092915050565b815160208184018101805160018252928201918501919091209190528054829081106108b057fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919450925083918301828280156109495780601f1061091e57610100808354040283529160200191610949565b820191906000526020600020905b81548152906001019060200180831161092c57829003601f168201915b50505050600183015460029093015491926001600160a01b031691905083565b600260208181526000928352604092839020805484516001821615610100026000190190911693909304601f81018390048302840183019094528383529192908301828280156109fa5780601f106109cf576101008083540402835291602001916109fa565b820191906000526020600020905b8154815290600101906020018083116109dd57829003601f168201915b505050505081565b60405180606001604052806060815260200160006001600160a01b03168152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a6d57805160ff1916838001178555610a9a565b82800160010185558215610a9a579182015b82811115610a9a578251825591602001919060010190610a7f565b50610aa6929150610b18565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610aeb5782800160ff19823516178555610a9a565b82800160010185558215610a9a579182015b82811115610a9a578235825591602001919060010190610afd565b610b3291905b80821115610aa65760008155600101610b1e565b9056fea265627a7a723158201c575bc2600e762124c36717c57a20605697473cf3622ec2d4de63ccb123d37a64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063507ffba51161005b578063507ffba5146102f65780635f3d530814610364578063cb6c754a146103e4578063e07a0baa1461048a57610088565b80630b0511811461008d5780633271667d14610193578063383029891461019d578063467fba0f14610238575b600080fd5b6100fb600480360360408110156100a357600080fd5b810190602081018135600160201b8111156100bd57600080fd5b8201836020820111156100cf57600080fd5b803590602001918460018302840111600160201b831117156100f057600080fd5b9193509150356104b0565b6040518080602001846001600160a01b03166001600160a01b03168152602001838152602001828103825285818151815260200191508051906020019080838360005b8381101561015657818101518382015260200161013e565b50505050905090810190601f1680156101835780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019b6105d5565b005b6101c3600480360360208110156101b357600080fd5b50356001600160a01b03166105e9565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101fd5781810151838201526020016101e5565b50505050905090810190601f16801561022a5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61019b6004803603604081101561024e57600080fd5b810190602081018135600160201b81111561026857600080fd5b82018360208201111561027a57600080fd5b803590602001918460018302840111600160201b8311171561029b57600080fd5b919390929091602081019035600160201b8111156102b857600080fd5b8201836020820111156102ca57600080fd5b803590602001918460018302840111600160201b831117156102eb57600080fd5b509092509050610692565b61019b6004803603602081101561030c57600080fd5b810190602081018135600160201b81111561032657600080fd5b82018360208201111561033857600080fd5b803590602001918460018302840111600160201b8311171561035957600080fd5b509092509050610838565b6103d26004803603602081101561037a57600080fd5b810190602081018135600160201b81111561039457600080fd5b8201836020820111156103a657600080fd5b803590602001918460018302840111600160201b831117156103c757600080fd5b509092509050610857565b60408051918252519081900360200190f35b6100fb600480360360408110156103fa57600080fd5b810190602081018135600160201b81111561041457600080fd5b82018360208201111561042657600080fd5b803590602001918460018302840111600160201b8311171561044757600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295505091359250610888915050565b6101c3600480360360208110156104a057600080fd5b50356001600160a01b0316610969565b60606000806104bd610a02565b60018787604051808383808284378083019250505092505050908152602001604051809103902085815481106104ef57fe5b600091825260209182902060408051600393909302909101805460026001821615610100026000190190911604601f81018590049094028301608090810190925260608301848152929390928492909184918401828280156105925780601f1061056757610100808354040283529160200191610592565b820191906000526020600020905b81548152906001019060200180831161057557829003601f168201915b505050918352505060018201546001600160a01b031660208083019190915260029092015460409182015282519183015192015190999198509650945050505050565b600080546001600160a01b03191633179055565b6001600160a01b038116600090815260026020818152604092839020805484516001821615610100026000190190911693909304601f810183900483028401830190945283835260609390918301828280156106865780601f1061065b57610100808354040283529160200191610686565b820191906000526020600020905b81548152906001019060200180831161066957829003601f168201915b50505050509050919050565b61069a610a02565b604051806060016040528086868080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152505050908252503360208201524260409182015251909150600190849084908083838082843791909101948552505060405160209381900384019020805460018101808355600092835291859020865180519396889650600390930290910193506107489284929190910190610a2c565b5060208201518160010160006101000a8154816001600160a01b0302191690836001600160a01b03160217905550604082015181600201555050507f64e63d887f808b516e7eba5cf84ba14205c00730614a89dffa6befb5ef6461e88585334287876040518080602001866001600160a01b03166001600160a01b03168152602001858152602001806020018381038352898982818152602001925080828437600083820152601f01601f191690910184810383528581526020019050858580828437600083820152604051601f909101601f19169092018290039a509098505050505050505050a15050505050565b336000908152600260205260409020610852908383610aaa565b505050565b6000600183836040518083838082843791909101948552505060405192839003602001909220549250505092915050565b815160208184018101805160018252928201918501919091209190528054829081106108b057fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919450925083918301828280156109495780601f1061091e57610100808354040283529160200191610949565b820191906000526020600020905b81548152906001019060200180831161092c57829003601f168201915b50505050600183015460029093015491926001600160a01b031691905083565b600260208181526000928352604092839020805484516001821615610100026000190190911693909304601f81018390048302840183019094528383529192908301828280156109fa5780601f106109cf576101008083540402835291602001916109fa565b820191906000526020600020905b8154815290600101906020018083116109dd57829003601f168201915b505050505081565b60405180606001604052806060815260200160006001600160a01b03168152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a6d57805160ff1916838001178555610a9a565b82800160010185558215610a9a579182015b82811115610a9a578251825591602001919060010190610a7f565b50610aa6929150610b18565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610aeb5782800160ff19823516178555610a9a565b82800160010185558215610a9a579182015b82811115610a9a578235825591602001919060010190610afd565b610b3291905b80821115610aa65760008155600101610b1e565b9056fea265627a7a723158201c575bc2600e762124c36717c57a20605697473cf3622ec2d4de63ccb123d37a64736f6c63430005100032",
+  "sourceMap": "71:1942:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;71:1942:1;;;;;;;",
+  "deployedSourceMap": "71:1942:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;71:1942:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1658:353;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1658:353:1;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;1658:353:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1658:353:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1658:353:1;;-1:-1:-1;1658:353:1;-1:-1:-1;1658:353:1;;:::i;:::-;;;;;;;;-1:-1:-1;;;;;1658:353:1;-1:-1:-1;;;;;1658:353:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1658:353:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:64;;;:::i;:::-;;1198:160;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1198:160:1;-1:-1:-1;;;;;1198:160:1;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1198:160:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;603:299;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;603:299:1;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;603:299:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;603:299:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;603:299:1;;;;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;603:299:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;603:299:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;603:299:1;;-1:-1:-1;603:299:1;-1:-1:-1;603:299:1;:::i;1050:142::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1050:142:1;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;1050:142:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1050:142:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;1050:142:1;;-1:-1:-1;1050:142:1;-1:-1:-1;1050:142:1;:::i;1407:179::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1407:179:1;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;1407:179:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1407:179:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;1407:179:1;;-1:-1:-1;1407:179:1;-1:-1:-1;1407:179:1;:::i;:::-;;;;;;;;;;;;;;;;368:54;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;368:54:1;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;368:54:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;368:54:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;368:54:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;368:54:1;;-1:-1:-1;;368:54:1;;;-1:-1:-1;368:54:1;;-1:-1:-1;;368:54:1:i;428:51::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;428:51:1;-1:-1:-1;;;;;428:51:1;;:::i;1658:353::-;1795:13;1822:7;1843;1875:22;;:::i;:::-;1900:18;1919:9;;1900:29;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;1900:29:1;;;;;;;;;;;;;;;;;;1930:6;1900:37;;;;;;;;;;;;;;;;;1875:62;;;1900:37;;;;;;;;1875:62;;;;;;;;;-1:-1:-1;;1875:62:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1900:37;;1875:62;;;;1900:37;;1875:62;;1900:37;1875:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;1875:62:1;;;-1:-1:-1;;1875:62:1;;;;-1:-1:-1;;;;;1875:62:1;;;;;;;;;;;;;;;;;;;1955:15;;1972:12;;;;1986:17;;;1955:15;;1972:12;;-1:-1:-1;1986:17:1;-1:-1:-1;1658:353:1;-1:-1:-1;;;;;1658:353:1:o;486:64::-;525:5;:18;;-1:-1:-1;;;;;;525:18:1;533:10;525:18;;;486:64::o;1198:160::-;-1:-1:-1;;;;;1327:24:1;;;;;;:17;:24;;;;;;;;;1320:31;;;;;;;;;;-1:-1:-1;;1320:31:1;;;;;;;;;;;;;;;;;;;;;;;;;;1291:13;;1327:24;;1320:31;;1327:24;1320:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1198:160;;;:::o;603:299::-;704:22;;:::i;:::-;729:42;;;;;;;;737:4;;729:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;;;729:42:1;;;-1:-1:-1;743:10:1;729:42;;;;755:15;729:42;;;;;781:29;704:67;;-1:-1:-1;781:18:1;;800:9;;;;781:29;800:9;;;;781:29;1:33:-1;45:16;;;;781:29:1;;;-1:-1:-1;;781:29:1;;;;;;;;;;;27:10:-1;;39:1;23:18;;45:23;;;-1:-1;781:43:1;;;;;;;;;;;23:18:-1;;781:43:1;;-1:-1:-1;781:43:1;;;;;;;;-1:-1:-1;781:43:1;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;-1:-1:-1;;;;;781:43:1;;;;;-1:-1:-1;;;;;781:43:1;;;;;;;;;;;;;;;;;839:56;850:4;;856:10;868:15;885:9;;839:56;;;;;;;-1:-1:-1;;;;;839:56:1;-1:-1:-1;;;;;839:56:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;;74:27;137:4;117:14;-1:-1;;113:30;157:16;;;839:56:1;;;;;;;;;;;-1:-1:-1;839:56:1;;;;;1:33:-1;99:1;81:16;;;74:27;839:56:1;;137:4:-1;117:14;;;-1:-1;;113:30;157:16;;;839:56:1;;;;-1:-1:-1;839:56:1;;-1:-1:-1;;;;;;;;;839:56:1;603:299;;;;;:::o;1050:142::-;1130:10;1112:29;;;;:17;:29;;;;;:37;;1144:5;;1112:37;:::i;:::-;;1050:142;;:::o;1407:179::-;1513:7;1543:18;1562:9;;1543:29;;;;;30:3:-1;22:6;14;1:33;45:16;;;;1543:29:1;;;-1:-1:-1;;1543:29:1;;;;;;;;;;;:36;;-1:-1:-1;;;1407:179:1;;;;:::o;368:54::-;22:14:-1;;169:4;143:32;;;;;198:20;;368:54:1;224:31:-1;;156:18;;;283;;;273:49;;;;328:32;;;368:54:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;368:54:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;368:54:1;-1:-1:-1;368:54:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;368:54:1;;;;;;;;;;;-1:-1:-1;;;;;368:54:1;;;-1:-1:-1;368:54:1;:::o;428:51::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;428:51:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;71:1942::-;;;;;;;;;;;;;;;-1:-1:-1;;;;;71:1942:1;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;71:1942:1;;;-1:-1:-1;71:1942:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;71:1942:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.4.0 <=0.9.0;\n\ncontract testChat {\n    event NewMessage(\n        string message,\n        address user,\n        uint256 timestamp,\n        string roomName\n    );\n\n    address owner;\n    // uint userCount=0;\n\n    struct Message {\n        string message;\n        address user;\n        uint256 timestamp;\n    }\n\n    mapping(string => Message[]) public roomNameToMessages;\n    mapping(address => string) public addressToUsername;\n\n    function construter() public {\n        owner = msg.sender;\n    }\n\n    // Send a message to a room and fire evant\n    function sendMessage(string calldata _msg, string calldata _roomName)\n        external\n    {\n        Message memory message = Message(_msg, msg.sender, block.timestamp);\n        roomNameToMessages[_roomName].push(message);\n        emit NewMessage(_msg, msg.sender, block.timestamp, _roomName);\n    }\n\n    // Functions for creating and fetching custom usernames. If a user updates\n    // their username it will update for all of their messages\n    function createUser(string calldata _name) external {\n        addressToUsername[msg.sender] = _name;\n        // userCount = userCount+1;\n    }\n\n    function getUsernameForAddress(address _user)\n        external\n        view\n        returns (string memory)\n    {\n        return addressToUsername[_user];\n    }\n\n    // for geting lenth of message in room\n    function getMessageCountForRoom(string calldata _roomName)\n        external\n        view\n        returns (uint256)\n    {\n        return roomNameToMessages[_roomName].length;\n    }\n\n    // this function is for retrive message by roomname and index\n    function getMessageByIndexForRoom(string calldata _roomName, uint256 _index)\n        external\n        view\n        returns (\n            string memory,\n            address,\n            uint256\n        )\n    {\n        Message memory message = roomNameToMessages[_roomName][_index];\n        return (message.message, message.user, message.timestamp);\n    }\n}\n",
+  "sourcePath": "C:\\Users\\kevin\\PycharmProjects\\E2E Message and File Sharing System\\contracts\\chatApp.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/chatApp.sol",
+    "exportedSymbols": {
+      "testChat": [
+        174
+      ]
+    },
+    "id": 175,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<=",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 174,
+        "linearizedBaseContracts": [
+          174
+        ],
+        "name": "testChat",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 44,
+            "name": "NewMessage",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 43,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36,
+                  "indexed": false,
+                  "name": "message",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 44,
+                  "src": "121:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 35,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 38,
+                  "indexed": false,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 44,
+                  "src": "145:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 37,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 40,
+                  "indexed": false,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 44,
+                  "src": "167:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "167:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42,
+                  "indexed": false,
+                  "name": "roomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 44,
+                  "src": "194:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "111:104:1"
+            },
+            "src": "95:121:1"
+          },
+          {
+            "constant": false,
+            "id": 46,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 174,
+            "src": "222:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 45,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "testChat.Message",
+            "id": 53,
+            "members": [
+              {
+                "constant": false,
+                "id": 48,
+                "name": "message",
+                "nodeType": "VariableDeclaration",
+                "scope": 53,
+                "src": "292:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 47,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "292:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 50,
+                "name": "user",
+                "nodeType": "VariableDeclaration",
+                "scope": 53,
+                "src": "316:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 49,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "316:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 52,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 53,
+                "src": "338:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 51,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "338:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Message",
+            "nodeType": "StructDefinition",
+            "scope": 174,
+            "src": "267:95:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 58,
+            "name": "roomNameToMessages",
+            "nodeType": "VariableDeclaration",
+            "scope": 174,
+            "src": "368:54:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Message_$53_storage_$dyn_storage_$",
+              "typeString": "mapping(string => struct testChat.Message[])"
+            },
+            "typeName": {
+              "id": 57,
+              "keyType": {
+                "id": 54,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "376:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "368:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Message_$53_storage_$dyn_storage_$",
+                "typeString": "mapping(string => struct testChat.Message[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "contractScope": null,
+                  "id": 55,
+                  "name": "Message",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 53,
+                  "src": "386:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Message_$53_storage_ptr",
+                    "typeString": "struct testChat.Message"
+                  }
+                },
+                "id": 56,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "386:9:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Message_$53_storage_$dyn_storage_ptr",
+                  "typeString": "struct testChat.Message[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 62,
+            "name": "addressToUsername",
+            "nodeType": "VariableDeclaration",
+            "scope": 174,
+            "src": "428:51:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+              "typeString": "mapping(address => string)"
+            },
+            "typeName": {
+              "id": 61,
+              "keyType": {
+                "id": 59,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "436:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "428:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                "typeString": "mapping(address => string)"
+              },
+              "valueType": {
+                "id": 60,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "447:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 70,
+              "nodeType": "Block",
+              "src": "515:35:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 68,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 65,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "525:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 66,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 189,
+                        "src": "533:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 67,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "533:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "525:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 69,
+                  "nodeType": "ExpressionStatement",
+                  "src": "525:18:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 71,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "construter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "505:2:1"
+            },
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "515:0:1"
+            },
+            "scope": 174,
+            "src": "486:64:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 104,
+              "nodeType": "Block",
+              "src": "694:208:1",
+              "statements": [
+                {
+                  "assignments": [
+                    79
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 79,
+                      "name": "message",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 104,
+                      "src": "704:22:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                        "typeString": "struct testChat.Message"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 78,
+                        "name": "Message",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 53,
+                        "src": "704:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Message_$53_storage_ptr",
+                          "typeString": "struct testChat.Message"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 87,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 81,
+                        "name": "_msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 73,
+                        "src": "737:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 82,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 189,
+                          "src": "743:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 83,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "743:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 84,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 179,
+                          "src": "755:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "755:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 80,
+                      "name": "Message",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 53,
+                      "src": "729:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Message_$53_storage_ptr_$",
+                        "typeString": "type(struct testChat.Message storage pointer)"
+                      }
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "729:42:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Message_$53_memory",
+                      "typeString": "struct testChat.Message memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "704:67:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 92,
+                        "name": "message",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 79,
+                        "src": "816:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                          "typeString": "struct testChat.Message memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                          "typeString": "struct testChat.Message memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "roomNameToMessages",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 58,
+                          "src": "781:18:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Message_$53_storage_$dyn_storage_$",
+                            "typeString": "mapping(string memory => struct testChat.Message storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 90,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_roomName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 75,
+                          "src": "800:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_calldata_ptr",
+                            "typeString": "string calldata"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "781:29:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Message_$53_storage_$dyn_storage",
+                          "typeString": "struct testChat.Message storage ref[] storage ref"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "781:34:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Message_$53_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct testChat.Message storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 93,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "781:43:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 94,
+                  "nodeType": "ExpressionStatement",
+                  "src": "781:43:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "_msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 73,
+                        "src": "850:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 97,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 189,
+                          "src": "856:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 98,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "856:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 179,
+                          "src": "868:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 100,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "868:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 101,
+                        "name": "_roomName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 75,
+                        "src": "885:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      ],
+                      "id": 95,
+                      "name": "NewMessage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44,
+                      "src": "839:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,address,uint256,string memory)"
+                      }
+                    },
+                    "id": 102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "839:56:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 103,
+                  "nodeType": "EmitStatement",
+                  "src": "834:61:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 105,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sendMessage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 76,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 73,
+                  "name": "_msg",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 105,
+                  "src": "624:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "624:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 75,
+                  "name": "_roomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 105,
+                  "src": "646:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 74,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "646:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "623:49:1"
+            },
+            "returnParameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "694:0:1"
+            },
+            "scope": 174,
+            "src": "603:299:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 117,
+              "nodeType": "Block",
+              "src": "1102:90:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 115,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "addressToUsername",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 62,
+                        "src": "1112:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                          "typeString": "mapping(address => string storage ref)"
+                        }
+                      },
+                      "id": 113,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 111,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 189,
+                          "src": "1130:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 112,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1130:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1112:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 114,
+                      "name": "_name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 107,
+                      "src": "1144:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "src": "1112:37:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 116,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1112:37:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 118,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 107,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 118,
+                  "src": "1070:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 106,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1070:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1069:23:1"
+            },
+            "returnParameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1102:0:1"
+            },
+            "scope": 174,
+            "src": "1050:142:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 129,
+              "nodeType": "Block",
+              "src": "1310:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 125,
+                      "name": "addressToUsername",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 62,
+                      "src": "1327:17:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                        "typeString": "mapping(address => string storage ref)"
+                      }
+                    },
+                    "id": 127,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 126,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 120,
+                      "src": "1345:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1327:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 124,
+                  "id": 128,
+                  "nodeType": "Return",
+                  "src": "1320:31:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 130,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUsernameForAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 120,
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "1229:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 119,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1229:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1228:15:1"
+            },
+            "returnParameters": {
+              "id": 124,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 123,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 130,
+                  "src": "1291:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 122,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1291:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1290:15:1"
+            },
+            "scope": 174,
+            "src": "1198:160:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 142,
+              "nodeType": "Block",
+              "src": "1526:60:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 137,
+                        "name": "roomNameToMessages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 58,
+                        "src": "1543:18:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Message_$53_storage_$dyn_storage_$",
+                          "typeString": "mapping(string memory => struct testChat.Message storage ref[] storage ref)"
+                        }
+                      },
+                      "id": 139,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 138,
+                        "name": "_roomName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 132,
+                        "src": "1562:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1543:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Message_$53_storage_$dyn_storage",
+                        "typeString": "struct testChat.Message storage ref[] storage ref"
+                      }
+                    },
+                    "id": 140,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1543:36:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 136,
+                  "id": 141,
+                  "nodeType": "Return",
+                  "src": "1536:43:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 143,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMessageCountForRoom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 132,
+                  "name": "_roomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 143,
+                  "src": "1439:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 131,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1439:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1438:27:1"
+            },
+            "returnParameters": {
+              "id": 136,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 135,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 143,
+                  "src": "1513:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 134,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1513:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1512:9:1"
+            },
+            "scope": 174,
+            "src": "1407:179:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 172,
+              "nodeType": "Block",
+              "src": "1865:146:1",
+              "statements": [
+                {
+                  "assignments": [
+                    157
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 157,
+                      "name": "message",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 172,
+                      "src": "1875:22:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                        "typeString": "struct testChat.Message"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 156,
+                        "name": "Message",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 53,
+                        "src": "1875:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Message_$53_storage_ptr",
+                          "typeString": "struct testChat.Message"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 163,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 158,
+                        "name": "roomNameToMessages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 58,
+                        "src": "1900:18:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Message_$53_storage_$dyn_storage_$",
+                          "typeString": "mapping(string memory => struct testChat.Message storage ref[] storage ref)"
+                        }
+                      },
+                      "id": 160,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 159,
+                        "name": "_roomName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 145,
+                        "src": "1919:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1900:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Message_$53_storage_$dyn_storage",
+                        "typeString": "struct testChat.Message storage ref[] storage ref"
+                      }
+                    },
+                    "id": 162,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 161,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 147,
+                      "src": "1930:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1900:37:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Message_$53_storage",
+                      "typeString": "struct testChat.Message storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1875:62:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 164,
+                          "name": "message",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 157,
+                          "src": "1955:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                            "typeString": "struct testChat.Message memory"
+                          }
+                        },
+                        "id": 165,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "message",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 48,
+                        "src": "1955:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 166,
+                          "name": "message",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 157,
+                          "src": "1972:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                            "typeString": "struct testChat.Message memory"
+                          }
+                        },
+                        "id": 167,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "user",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 50,
+                        "src": "1972:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 168,
+                          "name": "message",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 157,
+                          "src": "1986:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                            "typeString": "struct testChat.Message memory"
+                          }
+                        },
+                        "id": 169,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 52,
+                        "src": "1986:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 170,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1954:50:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_string_memory_$_t_address_$_t_uint256_$",
+                      "typeString": "tuple(string memory,address,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 155,
+                  "id": 171,
+                  "nodeType": "Return",
+                  "src": "1947:57:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 173,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMessageByIndexForRoom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 145,
+                  "name": "_roomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 173,
+                  "src": "1692:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 144,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1692:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 147,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 173,
+                  "src": "1719:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 146,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1719:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1691:43:1"
+            },
+            "returnParameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 150,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 173,
+                  "src": "1795:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 149,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1795:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 152,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 173,
+                  "src": "1822:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 151,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1822:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 154,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 173,
+                  "src": "1843:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 153,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1843:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1781:79:1"
+            },
+            "scope": 174,
+            "src": "1658:353:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 175,
+        "src": "71:1942:1"
+      }
+    ],
+    "src": "37:1977:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/chatApp.sol",
+      "exportedSymbols": {
+        "testChat": [
+          174
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".0",
+            "<=",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 34,
+        "name": "PragmaDirective",
+        "src": "37:32:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            174
+          ],
+          "name": "testChat",
+          "scope": 175
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "NewMessage"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "message",
+                      "scope": 44,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 35,
+                        "name": "ElementaryTypeName",
+                        "src": "121:6:1"
+                      }
+                    ],
+                    "id": 36,
+                    "name": "VariableDeclaration",
+                    "src": "121:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "user",
+                      "scope": 44,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 37,
+                        "name": "ElementaryTypeName",
+                        "src": "145:7:1"
+                      }
+                    ],
+                    "id": 38,
+                    "name": "VariableDeclaration",
+                    "src": "145:12:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "timestamp",
+                      "scope": 44,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 39,
+                        "name": "ElementaryTypeName",
+                        "src": "167:7:1"
+                      }
+                    ],
+                    "id": 40,
+                    "name": "VariableDeclaration",
+                    "src": "167:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "roomName",
+                      "scope": 44,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 41,
+                        "name": "ElementaryTypeName",
+                        "src": "194:6:1"
+                      }
+                    ],
+                    "id": 42,
+                    "name": "VariableDeclaration",
+                    "src": "194:15:1"
+                  }
+                ],
+                "id": 43,
+                "name": "ParameterList",
+                "src": "111:104:1"
+              }
+            ],
+            "id": 44,
+            "name": "EventDefinition",
+            "src": "95:121:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owner",
+              "scope": 174,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 45,
+                "name": "ElementaryTypeName",
+                "src": "222:7:1"
+              }
+            ],
+            "id": 46,
+            "name": "VariableDeclaration",
+            "src": "222:13:1"
+          },
+          {
+            "attributes": {
+              "canonicalName": "testChat.Message",
+              "name": "Message",
+              "scope": 174,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "message",
+                  "scope": 53,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 47,
+                    "name": "ElementaryTypeName",
+                    "src": "292:6:1"
+                  }
+                ],
+                "id": 48,
+                "name": "VariableDeclaration",
+                "src": "292:14:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "user",
+                  "scope": 53,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 49,
+                    "name": "ElementaryTypeName",
+                    "src": "316:7:1"
+                  }
+                ],
+                "id": 50,
+                "name": "VariableDeclaration",
+                "src": "316:12:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "timestamp",
+                  "scope": 53,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 51,
+                    "name": "ElementaryTypeName",
+                    "src": "338:7:1"
+                  }
+                ],
+                "id": 52,
+                "name": "VariableDeclaration",
+                "src": "338:17:1"
+              }
+            ],
+            "id": 53,
+            "name": "StructDefinition",
+            "src": "267:95:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "roomNameToMessages",
+              "scope": 174,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string => struct testChat.Message[])",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string => struct testChat.Message[])"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 54,
+                    "name": "ElementaryTypeName",
+                    "src": "376:6:1"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "struct testChat.Message[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Message",
+                          "referencedDeclaration": 53,
+                          "type": "struct testChat.Message"
+                        },
+                        "id": 55,
+                        "name": "UserDefinedTypeName",
+                        "src": "386:7:1"
+                      }
+                    ],
+                    "id": 56,
+                    "name": "ArrayTypeName",
+                    "src": "386:9:1"
+                  }
+                ],
+                "id": 57,
+                "name": "Mapping",
+                "src": "368:28:1"
+              }
+            ],
+            "id": 58,
+            "name": "VariableDeclaration",
+            "src": "368:54:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "addressToUsername",
+              "scope": 174,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => string)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => string)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 59,
+                    "name": "ElementaryTypeName",
+                    "src": "436:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 60,
+                    "name": "ElementaryTypeName",
+                    "src": "447:6:1"
+                  }
+                ],
+                "id": 61,
+                "name": "Mapping",
+                "src": "428:26:1"
+              }
+            ],
+            "id": 62,
+            "name": "VariableDeclaration",
+            "src": "428:51:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "construter",
+              "scope": 174,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 63,
+                "name": "ParameterList",
+                "src": "505:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 64,
+                "name": "ParameterList",
+                "src": "515:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 46,
+                              "type": "address",
+                              "value": "owner"
+                            },
+                            "id": 65,
+                            "name": "Identifier",
+                            "src": "525:5:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 189,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 66,
+                                "name": "Identifier",
+                                "src": "533:3:1"
+                              }
+                            ],
+                            "id": 67,
+                            "name": "MemberAccess",
+                            "src": "533:10:1"
+                          }
+                        ],
+                        "id": 68,
+                        "name": "Assignment",
+                        "src": "525:18:1"
+                      }
+                    ],
+                    "id": 69,
+                    "name": "ExpressionStatement",
+                    "src": "525:18:1"
+                  }
+                ],
+                "id": 70,
+                "name": "Block",
+                "src": "515:35:1"
+              }
+            ],
+            "id": 71,
+            "name": "FunctionDefinition",
+            "src": "486:64:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "sendMessage",
+              "scope": 174,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_msg",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 72,
+                        "name": "ElementaryTypeName",
+                        "src": "624:6:1"
+                      }
+                    ],
+                    "id": 73,
+                    "name": "VariableDeclaration",
+                    "src": "624:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_roomName",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 74,
+                        "name": "ElementaryTypeName",
+                        "src": "646:6:1"
+                      }
+                    ],
+                    "id": 75,
+                    "name": "VariableDeclaration",
+                    "src": "646:25:1"
+                  }
+                ],
+                "id": 76,
+                "name": "ParameterList",
+                "src": "623:49:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 77,
+                "name": "ParameterList",
+                "src": "694:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        79
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "message",
+                          "scope": 104,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct testChat.Message",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Message",
+                              "referencedDeclaration": 53,
+                              "type": "struct testChat.Message"
+                            },
+                            "id": 78,
+                            "name": "UserDefinedTypeName",
+                            "src": "704:7:1"
+                          }
+                        ],
+                        "id": 79,
+                        "name": "VariableDeclaration",
+                        "src": "704:22:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": true,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "struct testChat.Message memory",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_calldata_ptr",
+                                  "typeString": "string calldata"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 53,
+                              "type": "type(struct testChat.Message storage pointer)",
+                              "value": "Message"
+                            },
+                            "id": 80,
+                            "name": "Identifier",
+                            "src": "729:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 73,
+                              "type": "string calldata",
+                              "value": "_msg"
+                            },
+                            "id": 81,
+                            "name": "Identifier",
+                            "src": "737:4:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 189,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 82,
+                                "name": "Identifier",
+                                "src": "743:3:1"
+                              }
+                            ],
+                            "id": 83,
+                            "name": "MemberAccess",
+                            "src": "743:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 179,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 84,
+                                "name": "Identifier",
+                                "src": "755:5:1"
+                              }
+                            ],
+                            "id": 85,
+                            "name": "MemberAccess",
+                            "src": "755:15:1"
+                          }
+                        ],
+                        "id": 86,
+                        "name": "FunctionCall",
+                        "src": "729:42:1"
+                      }
+                    ],
+                    "id": 87,
+                    "name": "VariableDeclarationStatement",
+                    "src": "704:67:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_Message_$53_memory_ptr",
+                                  "typeString": "struct testChat.Message memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct testChat.Message storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct testChat.Message storage ref[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 58,
+                                      "type": "mapping(string memory => struct testChat.Message storage ref[] storage ref)",
+                                      "value": "roomNameToMessages"
+                                    },
+                                    "id": 88,
+                                    "name": "Identifier",
+                                    "src": "781:18:1"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 75,
+                                      "type": "string calldata",
+                                      "value": "_roomName"
+                                    },
+                                    "id": 89,
+                                    "name": "Identifier",
+                                    "src": "800:9:1"
+                                  }
+                                ],
+                                "id": 90,
+                                "name": "IndexAccess",
+                                "src": "781:29:1"
+                              }
+                            ],
+                            "id": 91,
+                            "name": "MemberAccess",
+                            "src": "781:34:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 79,
+                              "type": "struct testChat.Message memory",
+                              "value": "message"
+                            },
+                            "id": 92,
+                            "name": "Identifier",
+                            "src": "816:7:1"
+                          }
+                        ],
+                        "id": 93,
+                        "name": "FunctionCall",
+                        "src": "781:43:1"
+                      }
+                    ],
+                    "id": 94,
+                    "name": "ExpressionStatement",
+                    "src": "781:43:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_calldata_ptr",
+                                  "typeString": "string calldata"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_calldata_ptr",
+                                  "typeString": "string calldata"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 44,
+                              "type": "function (string memory,address,uint256,string memory)",
+                              "value": "NewMessage"
+                            },
+                            "id": 95,
+                            "name": "Identifier",
+                            "src": "839:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 73,
+                              "type": "string calldata",
+                              "value": "_msg"
+                            },
+                            "id": 96,
+                            "name": "Identifier",
+                            "src": "850:4:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 189,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 97,
+                                "name": "Identifier",
+                                "src": "856:3:1"
+                              }
+                            ],
+                            "id": 98,
+                            "name": "MemberAccess",
+                            "src": "856:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 179,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 99,
+                                "name": "Identifier",
+                                "src": "868:5:1"
+                              }
+                            ],
+                            "id": 100,
+                            "name": "MemberAccess",
+                            "src": "868:15:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 75,
+                              "type": "string calldata",
+                              "value": "_roomName"
+                            },
+                            "id": 101,
+                            "name": "Identifier",
+                            "src": "885:9:1"
+                          }
+                        ],
+                        "id": 102,
+                        "name": "FunctionCall",
+                        "src": "839:56:1"
+                      }
+                    ],
+                    "id": 103,
+                    "name": "EmitStatement",
+                    "src": "834:61:1"
+                  }
+                ],
+                "id": 104,
+                "name": "Block",
+                "src": "694:208:1"
+              }
+            ],
+            "id": 105,
+            "name": "FunctionDefinition",
+            "src": "603:299:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createUser",
+              "scope": 174,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 118,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 106,
+                        "name": "ElementaryTypeName",
+                        "src": "1070:6:1"
+                      }
+                    ],
+                    "id": 107,
+                    "name": "VariableDeclaration",
+                    "src": "1070:21:1"
+                  }
+                ],
+                "id": 108,
+                "name": "ParameterList",
+                "src": "1069:23:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 109,
+                "name": "ParameterList",
+                "src": "1102:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 62,
+                                  "type": "mapping(address => string storage ref)",
+                                  "value": "addressToUsername"
+                                },
+                                "id": 110,
+                                "name": "Identifier",
+                                "src": "1112:17:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address payable"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 189,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 111,
+                                    "name": "Identifier",
+                                    "src": "1130:3:1"
+                                  }
+                                ],
+                                "id": 112,
+                                "name": "MemberAccess",
+                                "src": "1130:10:1"
+                              }
+                            ],
+                            "id": 113,
+                            "name": "IndexAccess",
+                            "src": "1112:29:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 107,
+                              "type": "string calldata",
+                              "value": "_name"
+                            },
+                            "id": 114,
+                            "name": "Identifier",
+                            "src": "1144:5:1"
+                          }
+                        ],
+                        "id": 115,
+                        "name": "Assignment",
+                        "src": "1112:37:1"
+                      }
+                    ],
+                    "id": 116,
+                    "name": "ExpressionStatement",
+                    "src": "1112:37:1"
+                  }
+                ],
+                "id": 117,
+                "name": "Block",
+                "src": "1102:90:1"
+              }
+            ],
+            "id": 118,
+            "name": "FunctionDefinition",
+            "src": "1050:142:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getUsernameForAddress",
+              "scope": 174,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_user",
+                      "scope": 130,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 119,
+                        "name": "ElementaryTypeName",
+                        "src": "1229:7:1"
+                      }
+                    ],
+                    "id": 120,
+                    "name": "VariableDeclaration",
+                    "src": "1229:13:1"
+                  }
+                ],
+                "id": 121,
+                "name": "ParameterList",
+                "src": "1228:15:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 130,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 122,
+                        "name": "ElementaryTypeName",
+                        "src": "1291:6:1"
+                      }
+                    ],
+                    "id": 123,
+                    "name": "VariableDeclaration",
+                    "src": "1291:13:1"
+                  }
+                ],
+                "id": 124,
+                "name": "ParameterList",
+                "src": "1290:15:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 124
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 62,
+                              "type": "mapping(address => string storage ref)",
+                              "value": "addressToUsername"
+                            },
+                            "id": 125,
+                            "name": "Identifier",
+                            "src": "1327:17:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 120,
+                              "type": "address",
+                              "value": "_user"
+                            },
+                            "id": 126,
+                            "name": "Identifier",
+                            "src": "1345:5:1"
+                          }
+                        ],
+                        "id": 127,
+                        "name": "IndexAccess",
+                        "src": "1327:24:1"
+                      }
+                    ],
+                    "id": 128,
+                    "name": "Return",
+                    "src": "1320:31:1"
+                  }
+                ],
+                "id": 129,
+                "name": "Block",
+                "src": "1310:48:1"
+              }
+            ],
+            "id": 130,
+            "name": "FunctionDefinition",
+            "src": "1198:160:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getMessageCountForRoom",
+              "scope": 174,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_roomName",
+                      "scope": 143,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 131,
+                        "name": "ElementaryTypeName",
+                        "src": "1439:6:1"
+                      }
+                    ],
+                    "id": 132,
+                    "name": "VariableDeclaration",
+                    "src": "1439:25:1"
+                  }
+                ],
+                "id": 133,
+                "name": "ParameterList",
+                "src": "1438:27:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 143,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 134,
+                        "name": "ElementaryTypeName",
+                        "src": "1513:7:1"
+                      }
+                    ],
+                    "id": 135,
+                    "name": "VariableDeclaration",
+                    "src": "1513:7:1"
+                  }
+                ],
+                "id": 136,
+                "name": "ParameterList",
+                "src": "1512:9:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 136
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "length",
+                          "referencedDeclaration": null,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct testChat.Message storage ref[] storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 58,
+                                  "type": "mapping(string memory => struct testChat.Message storage ref[] storage ref)",
+                                  "value": "roomNameToMessages"
+                                },
+                                "id": 137,
+                                "name": "Identifier",
+                                "src": "1543:18:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 132,
+                                  "type": "string calldata",
+                                  "value": "_roomName"
+                                },
+                                "id": 138,
+                                "name": "Identifier",
+                                "src": "1562:9:1"
+                              }
+                            ],
+                            "id": 139,
+                            "name": "IndexAccess",
+                            "src": "1543:29:1"
+                          }
+                        ],
+                        "id": 140,
+                        "name": "MemberAccess",
+                        "src": "1543:36:1"
+                      }
+                    ],
+                    "id": 141,
+                    "name": "Return",
+                    "src": "1536:43:1"
+                  }
+                ],
+                "id": 142,
+                "name": "Block",
+                "src": "1526:60:1"
+              }
+            ],
+            "id": 143,
+            "name": "FunctionDefinition",
+            "src": "1407:179:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getMessageByIndexForRoom",
+              "scope": 174,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_roomName",
+                      "scope": 173,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 144,
+                        "name": "ElementaryTypeName",
+                        "src": "1692:6:1"
+                      }
+                    ],
+                    "id": 145,
+                    "name": "VariableDeclaration",
+                    "src": "1692:25:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_index",
+                      "scope": 173,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 146,
+                        "name": "ElementaryTypeName",
+                        "src": "1719:7:1"
+                      }
+                    ],
+                    "id": 147,
+                    "name": "VariableDeclaration",
+                    "src": "1719:14:1"
+                  }
+                ],
+                "id": 148,
+                "name": "ParameterList",
+                "src": "1691:43:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 173,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 149,
+                        "name": "ElementaryTypeName",
+                        "src": "1795:6:1"
+                      }
+                    ],
+                    "id": 150,
+                    "name": "VariableDeclaration",
+                    "src": "1795:13:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 173,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 151,
+                        "name": "ElementaryTypeName",
+                        "src": "1822:7:1"
+                      }
+                    ],
+                    "id": 152,
+                    "name": "VariableDeclaration",
+                    "src": "1822:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 173,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 153,
+                        "name": "ElementaryTypeName",
+                        "src": "1843:7:1"
+                      }
+                    ],
+                    "id": 154,
+                    "name": "VariableDeclaration",
+                    "src": "1843:7:1"
+                  }
+                ],
+                "id": 155,
+                "name": "ParameterList",
+                "src": "1781:79:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        157
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "message",
+                          "scope": 172,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct testChat.Message",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Message",
+                              "referencedDeclaration": 53,
+                              "type": "struct testChat.Message"
+                            },
+                            "id": 156,
+                            "name": "UserDefinedTypeName",
+                            "src": "1875:7:1"
+                          }
+                        ],
+                        "id": 157,
+                        "name": "VariableDeclaration",
+                        "src": "1875:22:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct testChat.Message storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct testChat.Message storage ref[] storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 58,
+                                  "type": "mapping(string memory => struct testChat.Message storage ref[] storage ref)",
+                                  "value": "roomNameToMessages"
+                                },
+                                "id": 158,
+                                "name": "Identifier",
+                                "src": "1900:18:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 145,
+                                  "type": "string calldata",
+                                  "value": "_roomName"
+                                },
+                                "id": 159,
+                                "name": "Identifier",
+                                "src": "1919:9:1"
+                              }
+                            ],
+                            "id": 160,
+                            "name": "IndexAccess",
+                            "src": "1900:29:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 147,
+                              "type": "uint256",
+                              "value": "_index"
+                            },
+                            "id": 161,
+                            "name": "Identifier",
+                            "src": "1930:6:1"
+                          }
+                        ],
+                        "id": 162,
+                        "name": "IndexAccess",
+                        "src": "1900:37:1"
+                      }
+                    ],
+                    "id": 163,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1875:62:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 155
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(string memory,address,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "message",
+                              "referencedDeclaration": 48,
+                              "type": "string memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 157,
+                                  "type": "struct testChat.Message memory",
+                                  "value": "message"
+                                },
+                                "id": 164,
+                                "name": "Identifier",
+                                "src": "1955:7:1"
+                              }
+                            ],
+                            "id": 165,
+                            "name": "MemberAccess",
+                            "src": "1955:15:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "user",
+                              "referencedDeclaration": 50,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 157,
+                                  "type": "struct testChat.Message memory",
+                                  "value": "message"
+                                },
+                                "id": 166,
+                                "name": "Identifier",
+                                "src": "1972:7:1"
+                              }
+                            ],
+                            "id": 167,
+                            "name": "MemberAccess",
+                            "src": "1972:12:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": 52,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 157,
+                                  "type": "struct testChat.Message memory",
+                                  "value": "message"
+                                },
+                                "id": 168,
+                                "name": "Identifier",
+                                "src": "1986:7:1"
+                              }
+                            ],
+                            "id": 169,
+                            "name": "MemberAccess",
+                            "src": "1986:17:1"
+                          }
+                        ],
+                        "id": 170,
+                        "name": "TupleExpression",
+                        "src": "1954:50:1"
+                      }
+                    ],
+                    "id": 171,
+                    "name": "Return",
+                    "src": "1947:57:1"
+                  }
+                ],
+                "id": 172,
+                "name": "Block",
+                "src": "1865:146:1"
+              }
+            ],
+            "id": 173,
+            "name": "FunctionDefinition",
+            "src": "1658:353:1"
+          }
+        ],
+        "id": 174,
+        "name": "ContractDefinition",
+        "src": "71:1942:1"
+      }
+    ],
+    "id": 175,
+    "name": "SourceUnit",
+    "src": "37:1977:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-29T07:08:51.741Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
