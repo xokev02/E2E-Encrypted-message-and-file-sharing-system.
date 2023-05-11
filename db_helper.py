@@ -127,16 +127,31 @@ def get_key_for_user(username):
         return key
 
 
-def lname(lastname):
+def lname(userFname):
     mydb = mysql.connector.connect(user='developer', password='K3vin@123',
                                    host='127.0.0.1',
                                    database='new_schema')
 
     my_cursor = mydb.cursor()
-    my_cursor.execute("SELECT userLname FROM new_schema.users")
+    query = "SELECT userLname FROM users WHERE userFname = %s;"
+    my_cursor.execute(query, userFname)
     record = my_cursor.fetchone()
     mydb.close()
-    return lastname
+    return record
+
+def users():
+        mydb = mysql.connector.connect(user='developer', password='K3vin@123',
+                                       host='127.0.0.1',
+                                       database='new_schema')
+
+        my_cursor = mydb.cursor()
+        query = 'SELECT userFname, userLname FROM users'
+        my_cursor.execute(query)
+        record = my_cursor.fetchall()
+        mydb.close()
+        return record
+
+
 
     # def add_phone_number_existing_users(username, lastname, phonenumber):
     #     mydb = mysql.connector.connect(user='developer', password='K3vin@123',

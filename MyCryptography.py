@@ -1,29 +1,5 @@
-# import required module
-# import hashlib
-# import random
-# import string
-# import main
-
-
 from cryptography.fernet import Fernet
 import db_helper
-
-
-# def generate_otp(phone_number, length):
-#     """
-#     Generates a one-time pad of the specified length using the phone number as a seed.
-#     """
-#
-#     phone_number = int(input("Enter Your Phone Number: "))
-#
-#     # Hash the phone number to produce a random-looking seed
-#     seed = int(hashlib.sha256(phone_number.encode()).hexdigest(), 16)
-#     random.seed(seed)
-#
-#     # Generate a random string of characters from the ASCII letters and digits
-#     otp = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(length))
-#     return otp
-
 
 def decrypt_file(filename, user):
     global key
@@ -146,3 +122,22 @@ def decrypt_all_messages(user: str, include_old=0):
         except Exception as e:
             print(e)
             exit()
+
+
+
+
+
+# def generate_otp(phone_number, length):
+#     """
+#     Generates a one-time pad of the specified length using the phone number as a seed.
+#     """
+#
+#     phone_number = int(input("Enter Your Phone Number: "))
+#
+#     # Hash the phone number to produce a random-looking seed
+#     seed = int(hashlib.sha256(phone_number.encode()).hexdigest(), 16)
+#     random.seed(seed)
+#
+#     # Generate a random string of characters from the ASCII letters and digits
+#     otp = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(length))
+#     return otp
