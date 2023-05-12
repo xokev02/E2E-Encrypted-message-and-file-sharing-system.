@@ -21,9 +21,9 @@ while True:
               "Enter 3 for sending encrypted message to another user\t\t\t"
               "Enter 4 for reading encrypted messages received by you\n"
               "Enter 5 for adding a user\t\t\t\t\t\t\t\t\t\t"
-              "Enter 6 to exit\n"
+              "Enter 6 change user\n"
               "Enter 7 to view contacts\t\t\t\t\t\t\t\t\t\t"
-              "Enter 8 to change user")
+              "Enter 8 to to exit")
         print(
             "######################################################################################################################")
 
@@ -64,15 +64,6 @@ while True:
             #     print("<...Enter a valid OTP...>")
 
         elif x == 6:
-            print("See Ya Mi Amigo " + user + "!!!")
-            break
-
-        elif x == 7:
-            contacts = db_helper.users()
-            for name in contacts:
-                print(name[0], name[1])
-
-        elif x == 8:
             user = input("Enter user name:")
             pwd = input("Enter password:")
             result = db_helper.is_valid_user(user, pwd)
@@ -80,6 +71,15 @@ while True:
                 print("User Changed !!!")
             else:
                 print("Invalid user or password!!")
+
+        elif x == 7:
+            contacts = db_helper.users()
+            for name in contacts:
+                print(name[0], name[1])
+
+        elif x == 8:
+            print("See Ya Mi Amigo " + user + "!!!")
+            break
 
     else:
         print("Invalid UserName or Password!!")
